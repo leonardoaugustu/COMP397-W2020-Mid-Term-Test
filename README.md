@@ -1,3 +1,2 @@
-# COMP397-W2020-Test-Template-v2
-
-## Test template for COMP397 to be  used with Midterm test
+# COMP397-W2020-Mid-Term-Test
+Web Game Programming Mid-Term Test 
