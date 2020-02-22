@@ -34,6 +34,7 @@ var scenes;
         // PUBLIC METHODS
         //initialize and instatiate
         Play.prototype.Start = function () {
+            this._tableBackground = new createjs.Bitmap(config.Game.ASSETS.getResult("tableBackground"));
             this._dieOne = new objects.Die(100, 40, false);
             this._labelOne = new objects.Label("1", "30px", "Consolas", "#000000", 200, 270, true);
             this._dieTwo = new objects.Die(350, 40, false);
@@ -47,6 +48,7 @@ var scenes;
         };
         Play.prototype.Main = function () {
             var _this = this;
+            this.addChild(this._tableBackground);
             this.addChild(this._dieOne);
             this.addChild(this._labelOne);
             this.addChild(this._dieTwo);

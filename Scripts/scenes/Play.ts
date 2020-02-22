@@ -15,6 +15,7 @@ module scenes
         private _labelOne: objects.Label;
         private _labelTwo: objects.Label;
         private _rollButton: objects.Button;
+        private _tableBackground: createjs.Bitmap;
 
         // PUBLIC PROPERTIES
 
@@ -33,6 +34,8 @@ module scenes
         //initialize and instatiate
         public Start(): void 
         {
+            this._tableBackground = new createjs.Bitmap(config.Game.ASSETS.getResult("tableBackground"));
+
             this._dieOne = new objects.Die(100,40, false);
             this._labelOne = new objects.Label("1", "30px", "Consolas", "#000000", 200, 270, true);
 
@@ -53,6 +56,7 @@ module scenes
         
         public Main(): void 
         {
+            this.addChild(this._tableBackground);
             this.addChild(this._dieOne);
             this.addChild(this._labelOne);
             this.addChild(this._dieTwo);

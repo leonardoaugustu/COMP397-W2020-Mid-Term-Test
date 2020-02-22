@@ -27,7 +27,8 @@ var Game = (function () {
         { id: "3", src: "./Assets/images/3.png" },
         { id: "4", src: "./Assets/images/4.png" },
         { id: "5", src: "./Assets/images/5.png" },
-        { id: "6", src: "./Assets/images/6.png" }
+        { id: "6", src: "./Assets/images/6.png" },
+        { id: "tableBackground", src: "./Assets/images/green-casino-table-background.jpg" }
     ];
     function Preload() {
         assets = new createjs.LoadQueue(); // asset container
