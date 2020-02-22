@@ -1,4 +1,10 @@
 "use strict";
+/**
+ * Source File Name: Game.ts
+ * Author: Leonardo Augusto de Oliveira
+ * Date: Feb 22, 2020
+ * Description: Manage the game start with all its scene transitions.
+ */
 //IIFE - Immediately Invoked Function Expression
 //means -> self-executing anonymous function
 var Game = (function () {

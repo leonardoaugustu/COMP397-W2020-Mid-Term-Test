@@ -12,6 +12,12 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+/**
+ * Source File Name: Die.ts
+ * Author: Leonardo Augusto de Oliveira
+ * Date: Feb 22, 2020
+ * Description: Game object for modelling a die.
+ */
 var objects;
 (function (objects) {
     var Die = /** @class */ (function (_super) {
@@ -61,7 +67,8 @@ var objects;
             this.faceValue = 0;
         };
         /**
-         * Randomize a die result based on the boundary set by the numberOfSides property.
+         * Randomize a die result based on the boundary set by the numberOfSides
+         * property.
          */
         Die.prototype.Roll = function () {
             this.faceValue = Math.floor(util.Mathf.RandomRange(1, this.numberOfSides));

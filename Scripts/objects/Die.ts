@@ -1,3 +1,9 @@
+/**
+ * Source File Name: Die.ts
+ * Author: Leonardo Augusto de Oliveira
+ * Date: Feb 22, 2020
+ * Description: Game object for modelling a die.
+ */
 module objects
 {
     export class Die extends GameObject {
@@ -65,7 +71,8 @@ module objects
         }
 
         /**
-         * Randomize a die result based on the boundary set by the numberOfSides property.
+         * Randomize a die result based on the boundary set by the numberOfSides 
+         * property.
          */
         public Roll(): number
         {

@@ -1,3 +1,10 @@
+/**
+ * Source File Name: Play.ts
+ * Author: Leonardo Augusto de Oliveira
+ * Date: Feb 22, 2020
+ * Description: Play Scene: The game will display a random result of two dies set 
+ *              side by side within the webpage.
+ */
 module scenes
 {
     export class Play extends objects.Scene
@@ -52,6 +59,7 @@ module scenes
             this.addChild(this._labelTwo);
             this.addChild(this._rollButton);
 
+            // handler for click events 
             this._rollButton.on("click", ()=>{
                 this._dieOne.Roll();
                 this._dieTwo.Roll();
