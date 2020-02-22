@@ -28,11 +28,9 @@ module objects
         }
 
         // CONSTRUCTOR
-        constructor(numberOfSides:number=6)
+        constructor(x:number, y:number, centered:boolean)
         {
-            super(config.Game.ASSETS.getResult("blank"), 0, 0, true);
-            
-            this._numberOfSides = numberOfSides;
+            super(config.Game.ASSETS.getResult("0"), x, y, centered);
             
             this.Start();
         }
@@ -51,7 +49,8 @@ module objects
         // PUBLIC METHODS
         public Start(): void 
         {
-            this.Reset();
+            this._numberOfSides = 6;
+            this.faceValue = 0;
         }
 
         public Update(): void 
@@ -70,7 +69,7 @@ module objects
          */
         public Roll(): number
         {
-            this.faceValue = util.Mathf.RandomRange(1,this.numberOfSides);
+            this.faceValue = Math.floor(util.Mathf.RandomRange(1,this.numberOfSides));
             return this.faceValue;
         }
 
