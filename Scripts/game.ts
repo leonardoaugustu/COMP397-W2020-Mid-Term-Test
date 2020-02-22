@@ -19,7 +19,7 @@ let Game = (function(){
         {id:"nextButton", src:"./Assets/images/nextButton.png"},
         {id:"backButton", src:"./Assets/images/backButton.png"},
         {id:"rollButton", src:"./Assets/images/rollButton.png"},
-        {id:"blank", src:"./Assets/images/1.png"},
+        {id:"0", src:"./Assets/images/blank.png"},
         {id:"1", src:"./Assets/images/1.png"},
         {id:"2", src:"./Assets/images/2.png"},
         {id:"3", src:"./Assets/images/3.png"},

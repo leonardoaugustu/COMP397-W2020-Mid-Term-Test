@@ -25,13 +25,15 @@ module objects
         set faceValue(newFaceValue: number)
         {
             this._faceValue = newFaceValue;
-            this._changeFace();
         }
 
         // CONSTRUCTOR
-        constructor()
+        constructor(numberOfSides:number=6)
         {
             super(config.Game.ASSETS.getResult("blank"), 0, 0, true);
+            
+            this._numberOfSides = numberOfSides;
+            
             this.Start();
         }
 
@@ -41,7 +43,7 @@ module objects
 
         }
 
-        private _changeFace()
+        private _updateFace()
         {
             this.image = config.Game.ASSETS.getResult(this.faceValue) as HTMLImageElement;
         }
@@ -49,17 +51,27 @@ module objects
         // PUBLIC METHODS
         public Start(): void 
         {
-
+            this.Reset();
         }
 
         public Update(): void 
         {
-
+            this._updateFace();
         }
 
         public Reset(): void 
         {
+            this.faceValue = 0;
 
+        }
+
+        /**
+         * Randomize a die result based on the boundary set by the numberOfSides property.
+         */
+        public Roll(): number
+        {
+            this.faceValue = util.Mathf.RandomRange(1,this.numberOfSides);
+            return this.faceValue;
         }
 
     }

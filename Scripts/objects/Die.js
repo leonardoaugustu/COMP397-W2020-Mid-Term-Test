@@ -17,8 +17,10 @@ var objects;
     var Die = /** @class */ (function (_super) {
         __extends(Die, _super);
         // CONSTRUCTOR
-        function Die() {
+        function Die(numberOfSides) {
+            if (numberOfSides === void 0) { numberOfSides = 6; }
             var _this = _super.call(this, config.Game.ASSETS.getResult("blank"), 0, 0, true) || this;
+            _this._numberOfSides = numberOfSides;
             _this.Start();
             return _this;
         }
@@ -39,7 +41,6 @@ var objects;
             },
             set: function (newFaceValue) {
                 this._faceValue = newFaceValue;
-                this._changeFace();
             },
             enumerable: true,
             configurable: true
@@ -47,15 +48,25 @@ var objects;
         // PRIVATE METHODS
         Die.prototype._checkBounds = function () {
         };
-        Die.prototype._changeFace = function () {
+        Die.prototype._updateFace = function () {
             this.image = config.Game.ASSETS.getResult(this.faceValue);
         };
         // PUBLIC METHODS
         Die.prototype.Start = function () {
+            this.Reset();
         };
         Die.prototype.Update = function () {
+            this._updateFace();
         };
         Die.prototype.Reset = function () {
+            this.faceValue = 0;
+        };
+        /**
+         * Randomize a die result based on the boundary set by the numberOfSides property.
+         */
+        Die.prototype.Roll = function () {
+            this.faceValue = util.Mathf.RandomRange(1, this.numberOfSides);
+            return this.faceValue;
         };
         return Die;
     }(objects.GameObject));
